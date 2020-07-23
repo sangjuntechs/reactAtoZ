@@ -1,0 +1,17 @@
+.hello_box {
+    display: flex;
+    font-size: 30px;
+    justify-content: center;
+    align-items: center;
+    color: aqua;
+    font-weight: 600;
+    background-color: black;
+    padding: 50px;
+}
+
+.index_box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
