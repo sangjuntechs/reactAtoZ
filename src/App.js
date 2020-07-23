@@ -6,7 +6,10 @@ function App() {
   return (
     <Wrapper>
       <div className='hello_box'>
-        <Hello name='sangjun'/>
+        <Hello name='sangjun' isSpecial={true}/>
+      </div>
+      <div className='hello_box'>
+        <Hello isSpecial={false}/>
       </div>
     </Wrapper>
   );
