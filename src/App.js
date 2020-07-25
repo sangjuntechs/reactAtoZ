@@ -10,6 +10,7 @@ function App() {
       </div>
       <div className='hello_box'>
         <Hello isSpecial={false}/>
+        <Hello />
       </div>
     </Wrapper>
   );
