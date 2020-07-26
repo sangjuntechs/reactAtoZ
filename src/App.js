@@ -1,6 +1,7 @@
 import React from 'react';
 import Hello from './Hello';
 import Wrapper from './Wrapper';
+import Counter from './Counter';
 
 function App() {
   return (
@@ -10,9 +11,11 @@ function App() {
       </div>
       <div className='hello_box'>
         <Hello isSpecial={false}/>
-        <Hello />
       </div>
+
+      <Counter />
     </Wrapper>
+  
   );
 }
 
