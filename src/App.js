@@ -2,6 +2,8 @@ import React from 'react';
 import Hello from './Hello';
 import Wrapper from './Wrapper';
 import Counter from './Counter';
+import InputSample from './InputState';
+import './App.css';
 
 function App() {
   return (
@@ -14,6 +16,9 @@ function App() {
       </div>
 
       <Counter />
+      <div className ='input'>
+      <InputSample />
+      </div>
     </Wrapper>
   
   );
