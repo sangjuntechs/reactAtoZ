@@ -6,16 +6,14 @@ function CreateUser({ username, email, onChange, onCreate }) {
       <input
         name="username"
         placeholder="계정명"
-        onChage={onChange}
-        value={username}
-      />
+        onChange={onChange}
+        value={username}/>
 
       <input
         name="email"
         placeholder="이메일"
-        onChage={onChange}
-        value={email}
-      />
+        onChange={onChange}
+        value={email}/>
 
       <button onClick={onCreate}>등록</button>
     </div>

@@ -1,9 +1,5 @@
 import React, { useRef, useState } from "react";
-import Hello from "./Hello";
-import Wrapper from "./Wrapper";
-import Counter from "./Counter";
-import InputSample from "./InputState";
-import "./App.css";
+
 import UserList from "./Userlist";
 import CreateUser from "./CreateUser";
 
@@ -14,15 +10,15 @@ function App() {
   });
   const { username, email } = inputs;
 
-  const onChange = (event) => {
-    const { name, value } = event.target;
+  const onChange = (e) => {
+    const { name, value } = e.target;
     setInputs({
       ...inputs,
       [name]: value,
     });
   };
 
-  const users = [
+  const [users, setUsers] = useState([
     {
       id: 1,
       username: "sangjun",
@@ -38,16 +34,32 @@ function App() {
       username: "anonymous",
       email: "anonymous@example.com",
     },
-  ];
+  ]);
+
   const nextId = useRef(4);
 
   const onCreate = () => {
+    const user = {
+      id: nextId.current,
+      username,
+      email,
+    };
+    setUsers([...users, user]);
+    setInputs({
+      username: "",
+      email: "",
+    });
     nextId.current += 1;
   };
 
   return (
     <>
-      <CreateUser username={username} email={email} onChange={onChange} onCreate={onCreate}/>
+      <CreateUser
+        username={username}
+        email={email}
+        onChange={onChange}
+        onCreate={onCreate}
+      />
       <UserList users={users} />
     </>
   );
