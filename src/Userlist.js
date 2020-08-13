@@ -1,13 +1,21 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 function User({ user, onRemove, onToggle }) {
+  useEffect( () => {
+    console.log(user)
+    return () => {
+      console.log('user의 이전상태',{user})
+    }
+  }, [user])
   return (
     <div>
       <b style ={{
         color: user.active ? 'dodgerblue' : 'black',
         cursor: 'pointer'
       }} onClick={() => onToggle(user.id)}>
-        {user.username}</b> <span>({user.email})</span>
+        {user.username}</b> <span style ={{
+          color: user.active ? 'dodgerblue' : 'black'
+        }}>({user.email})</span>
       <button onClick={() => onRemove(user.id)}>삭제</button>
     </div>
   );
